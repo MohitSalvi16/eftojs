@@ -17,7 +17,7 @@ console.log(prompt);
 console.log(`\ntokens: ${diff.before}`);
 
 console.log("\n" + "=".repeat(60));
-console.log("METRA-COMPRESSED PROMPT");
+console.log("EFTOJS-COMPRESSED PROMPT");
 console.log("=".repeat(60));
 console.log(compressed);
 console.log(`\ntokens: ${diff.after}`);
@@ -47,18 +47,18 @@ function callClaude(label, text) {
   return estimateTokens(reply);
 }
 
-const replyTokensRaw = callClaude("WITHOUT metra", prompt);
-const replyTokensMetra = callClaude("WITH metra", compressed);
+const replyTokensRaw = callClaude("WITHOUT eftojs", prompt);
+const replyTokensEftojs = callClaude("WITH eftojs", compressed);
 
-if (replyTokensRaw !== null && replyTokensMetra !== null) {
+if (replyTokensRaw !== null && replyTokensEftojs !== null) {
   console.log("\n" + "=".repeat(60));
   console.log("TOTAL ROUND-TRIP TOKEN COMPARISON");
   console.log("=".repeat(60));
   const rawTotal = diff.before + replyTokensRaw;
-  const metraTotal = diff.after + replyTokensMetra;
-  const totalSaved = rawTotal - metraTotal;
+  const eftojsTotal = diff.after + replyTokensEftojs;
+  const totalSaved = rawTotal - eftojsTotal;
   const pct = rawTotal ? Math.round((totalSaved / rawTotal) * 1000) / 10 : 0;
-  console.log(`without metra: ${diff.before} in + ${replyTokensRaw} out = ${rawTotal} tokens`);
-  console.log(`with metra:    ${diff.after} in + ${replyTokensMetra} out = ${metraTotal} tokens`);
+  console.log(`without eftojs: ${diff.before} in + ${replyTokensRaw} out = ${rawTotal} tokens`);
+  console.log(`with eftojs:    ${diff.after} in + ${replyTokensEftojs} out = ${eftojsTotal} tokens`);
   console.log(`net saved:     ${totalSaved} tokens (${pct}%)`);
 }

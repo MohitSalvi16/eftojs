@@ -1,18 +1,18 @@
-# Contributing to Metra
+# Contributing to Eftojs
 
-Thanks for your interest in making Metra better. This project is small on purpose — contributions that keep it lean are the most welcome.
+Thanks for your interest in making Eftojs better. This project is small on purpose — contributions that keep it lean are the most welcome.
 
 ## Ground rules
 
-- **Keep the dependency footprint near zero.** Metra is meant to drop into any LLM app without pulling the world.
+- **Keep the dependency footprint near zero.** Eftojs is meant to drop into any LLM app without pulling the world.
 - **Preserve semantic meaning.** Any new compression rule must not change what the model is being asked to do.
 - **Benchmark before you ship.** If you add a transform, include a before/after token delta in the PR description.
 
 ## Development
 
 ```bash
-git clone https://github.com/metra-sdk/metra.git
-cd metra
+git clone https://github.com/MohitSalvi16/eftojs.git
+cd eftojs
 npm install
 npm run build
 ```
@@ -37,7 +37,7 @@ When reporting a bug, include:
 - The input prompt (or a minimal reproduction)
 - What you expected
 - What you got
-- Metra version and Node version
+- Eftojs version and Node version
 
 ## Code style
 

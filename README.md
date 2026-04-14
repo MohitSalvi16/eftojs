@@ -1,15 +1,15 @@
-# Metra
+# Eftojs
 
 > Token-efficiency SDK for LLMs. Compress prompts, manage context, and cut token usage 40–70% — without losing meaning.
 
-[![npm version](https://img.shields.io/npm/v/metra.svg)](https://www.npmjs.com/package/metra)
-[![license](https://img.shields.io/npm/l/metra.svg)](./LICENSE)
+[![npm version](https://img.shields.io/npm/v/eftojs.svg)](https://www.npmjs.com/package/eftojs)
+[![license](https://img.shields.io/npm/l/eftojs.svg)](./LICENSE)
 
 ---
 
-## What is Metra?
+## What is Eftojs?
 
-Metra is a tiny, zero-dependency TypeScript SDK that helps you:
+Eftojs is a tiny, zero-dependency TypeScript SDK that helps you:
 
 - **Build** compact, structured prompts from plain inputs
 - **Compress** verbose prompts while preserving intent
@@ -21,12 +21,12 @@ It works with any LLM — Claude, GPT-5, Gemini, local models — because all it
 
 ## Why token efficiency matters
 
-Every token you send costs money and latency. Most prompts contain 30–60% filler: restated instructions, hedging language ("please note that…"), verbose phrasing ("in order to" vs "to"), and duplicated rules. Metra strips that out, so your model gets the signal and you stop paying for the noise.
+Every token you send costs money and latency. Most prompts contain 30–60% filler: restated instructions, hedging language ("please note that…"), verbose phrasing ("in order to" vs "to"), and duplicated rules. Eftojs strips that out, so your model gets the signal and you stop paying for the noise.
 
 ## Installation
 
 ```bash
-npm install metra
+npm install eftojs
 ```
 
 Requires Node 18+.
@@ -34,7 +34,7 @@ Requires Node 18+.
 ## Quick start
 
 ```ts
-import { createPrompt, estimateTokens, compareTokens } from "metra";
+import { createPrompt, estimateTokens, compareTokens } from "eftojs";
 
 const prompt = createPrompt({
   mode: "ENG_V1",
@@ -54,7 +54,7 @@ console.log("tokens:", estimateTokens(prompt));
 Turn structured input into a compact, section-tagged prompt:
 
 ```ts
-import { createPrompt } from "metra";
+import { createPrompt } from "eftojs";
 
 const prompt = createPrompt({
   mode: "ENG_V1",
@@ -71,7 +71,7 @@ const prompt = createPrompt({
 Register reusable rule sets once, reference them by name:
 
 ```ts
-import { registerMode, createPrompt } from "metra";
+import { registerMode, createPrompt } from "eftojs";
 
 registerMode("ENG_V1", {
   persona: "Senior software engineer.",
@@ -86,7 +86,7 @@ Built-in modes: `ENG_V1`, `DOC_V1`, `REVIEW_V1`, `DATA_V1`.
 ### 3. Compression engine
 
 ```ts
-import { compress, compareTokens } from "metra";
+import { compress, compareTokens } from "eftojs";
 
 const verbose = `
 In order to build a login system, please note that you really need to
@@ -112,7 +112,7 @@ The compressor:
 Send base instructions once, then stream deltas:
 
 ```ts
-import { createContext } from "metra";
+import { createContext } from "eftojs";
 
 const ctx = createContext();
 ctx.setBase("You are a senior engineer. Respond in TypeScript only.");
@@ -127,7 +127,7 @@ const turn2 = ctx.next("Now add rate limiting");
 ### 5. Token estimator
 
 ```ts
-import { estimateTokens, compareTokens } from "metra";
+import { estimateTokens, compareTokens } from "eftojs";
 
 estimateTokens("Hello, world!");             // ~4
 compareTokens(original, compressed);          // { before, after, saved, savedPercent }
@@ -152,9 +152,9 @@ After (42 tokens, −64%):
 ## CLI
 
 ```bash
-npx metra optimize "In order to build a login system, please note that..."
-npx metra tokens "your prompt here"
-echo "a long prompt" | npx metra optimize
+npx eftojs optimize "In order to build a login system, please note that..."
+npx eftojs tokens "your prompt here"
+echo "a long prompt" | npx eftojs optimize
 ```
 
 The CLI prints the optimized prompt on stdout and the token delta on stderr, so you can pipe the result into another command.
@@ -178,7 +178,7 @@ All types are exported. See `dist/index.d.ts`.
 
 ## Contributing
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md). Metra stays small on purpose — PRs that reduce code or dependencies are especially welcome.
+See [CONTRIBUTING.md](./CONTRIBUTING.md). Eftojs stays small on purpose — PRs that reduce code or dependencies are especially welcome.
 
 ## License
 
