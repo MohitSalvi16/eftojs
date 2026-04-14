@@ -43,11 +43,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mohitsalvi/eftojs.git"
+    "url": "https://github.com/MohitSalvi16/eftojs.git"
   },
-  "homepage": "https://github.com/mohitsalvi/eftojs#readme",
+  "homepage": "https://github.com/MohitSalvi16/eftojs#readme",
   "bugs": {
-    "url": "https://github.com/mohitsalvi/eftojs/issues"
+    "url": "https://github.com/MohitSalvi16/eftojs/issues"
   },
   "devDependencies": {
     "tsup": "^8.3.0",
