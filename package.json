@@ -14,7 +14,7 @@
     }
   },
   "bin": {
-    "eftojs": "./dist/cli.js"
+    "eftojs": "dist/cli.js"
   },
   "files": [
     "dist",
@@ -43,7 +43,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MohitSalvi16/eftojs.git"
+    "url": "git+https://github.com/MohitSalvi16/eftojs.git"
   },
   "homepage": "https://github.com/MohitSalvi16/eftojs#readme",
   "bugs": {
