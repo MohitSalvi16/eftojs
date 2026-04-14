@@ -1,0 +1,60 @@
+{
+  "name": "eftojs",
+  "version": "1.0.0",
+  "description": "Token-efficiency SDK for LLMs — compress prompts, manage context, and cut token usage up to 70%.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "bin": {
+    "eftojs": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "npm run build",
+    "publish:pkg": "npm publish --access public"
+  },
+  "keywords": [
+    "llm",
+    "prompt",
+    "tokens",
+    "compression",
+    "openai",
+    "claude",
+    "gpt",
+    "ai",
+    "sdk",
+    "optimization"
+  ],
+  "author": "mohitsalvi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohitsalvi/eftojs.git"
+  },
+  "homepage": "https://github.com/mohitsalvi/eftojs#readme",
+  "bugs": {
+    "url": "https://github.com/mohitsalvi/eftojs/issues"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
